@@ -57,7 +57,7 @@ public class WebSecurityConfig {
                     config.setAllowedOrigins(List.of("https://localhost:4200")); // URL del frontend
                     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     config.setAllowCredentials(true); // Permitir cookies
-                    config.addExposedHeader("Message");
+                    //config.addExposedHeader("Message");
                     config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
                     return config;
                 }))

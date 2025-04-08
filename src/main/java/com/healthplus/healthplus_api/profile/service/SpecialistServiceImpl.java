@@ -90,6 +90,10 @@ public class SpecialistServiceImpl implements SpecialistService {
             throw new BadRequestException("The names and last names is already registered");
         }
 
+        if (specialistUpdateDTO.getBirthDate().isAfter(LocalDateTime.now())) {
+            throw new BadRequestException("The specialist's date of birth must be before today");
+        }
+
         User user = specialist.getUser();
         specialist.setNames(specialistUpdateDTO.getNames());
         specialist.setLastNames(specialistUpdateDTO.getLastNames());

@@ -195,7 +195,7 @@ public class PatientServiceImpl implements PatientService {
             throw new BadRequestException("The names and last names is already registered");
         }
 
-        if (patient.getBirthDate().isBefore(LocalDateTime.now())) {
+        if (patient.getBirthDate().isAfter(LocalDateTime.now())) {
             throw new BadRequestException("The patient's date of birth must be before today");
         }
 
@@ -254,7 +254,7 @@ public class PatientServiceImpl implements PatientService {
             throw new BadRequestException("The names and last names is already registered");
         }
 
-        if (patientUpdateDTO.getBirthDate().isBefore(LocalDateTime.now())) {
+        if (patientUpdateDTO.getBirthDate().isAfter(LocalDateTime.now())) {
             throw new BadRequestException("The patient's date of birth must be before today");
         }
 

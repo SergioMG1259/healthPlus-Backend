@@ -86,6 +86,11 @@ public class UserServiceImpl implements UserService {
 
         if (role == Role.SPECIALIST) {
             Specialist specialist = new Specialist();
+
+            if (userCreateDTO.getSpecialistCreateDTO().getBirthDate().isAfter(LocalDateTime.now())) {
+                throw new BadRequestException("The specialist's date of birth must be before today");
+            }
+
             specialist.setNames(userCreateDTO.getSpecialistCreateDTO().getNames());
             specialist.setLastNames(userCreateDTO.getSpecialistCreateDTO().getLastNames());
             specialist.setBirthDate(userCreateDTO.getSpecialistCreateDTO().getBirthDate());

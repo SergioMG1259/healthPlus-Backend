@@ -54,7 +54,7 @@ public class WebSecurityConfig {
                 //.cors(Customizer.withDefaults()) // Permite solicitudes cors desde otros dominios
                 .cors(cors -> cors.configurationSource(request -> {
                     CorsConfiguration config = new CorsConfiguration();
-                    config.setAllowedOrigins(List.of("https://localhost:4200")); // URL del frontend
+                    config.setAllowedOrigins(List.of("https://localhost:4200", "https://healthplus-wr6r.onrender.com")); // URL del frontend
                     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     config.setAllowCredentials(true); // Permitir cookies
                     //config.addExposedHeader("Message");

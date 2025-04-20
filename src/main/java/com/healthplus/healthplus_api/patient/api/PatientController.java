@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/patients")
 @PreAuthorize("hasAnyRole('ADMIN', 'SPECIALIST')")

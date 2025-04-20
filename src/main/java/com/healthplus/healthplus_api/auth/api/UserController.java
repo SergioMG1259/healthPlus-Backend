@@ -15,7 +15,6 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.Arrays;
 
-@CrossOrigin()
 @RestController
 @RequestMapping("/auth")
 public class UserController {
